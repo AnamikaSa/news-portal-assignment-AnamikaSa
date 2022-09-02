@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    
+    <header>
+        <nav class="px-2 sm:px-4 py-2.5 rounded">
+            <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <p><b><span class="text-red-600">News</span>ByAnamika</p></b>
+            <div class="flex items-center md:order-2">
+                  <img class="w-8 h-8 rounded-full" src="images/1.jpg">
+            </div>
+            <div class="ml-96 items-center w-full md:flex md:w-auto md:order-1 sm:d-flex " id="mobile-menu-2">
+              <ul class="flex flex-col  p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+                  <a href="#" class="block p-2 ml-64 text-gray-700 rounded hover:bg-sky-500 ">News</a>
+                  <a href="#" class="block p-2 text-gray-700 rounded hover:bg-sky-500 ">Blog</a>
+              </ul>
+            </div>
+            </div>
+
+            <hr>
+
+            <div id="news-catagories" class="container flex flex-wrap justify-between mx-auto mt-10 text-gray-400 text-lg" style="list-style-type: none;">
+
+            </div>
+          </nav>
+          
+    </header>
+
+
+    <script src="news.js"></script>
 </body>
 </html>
