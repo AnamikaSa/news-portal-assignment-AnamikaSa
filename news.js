@@ -107,7 +107,6 @@ const loadDetails = (_id)=>{
 
 
 const displayDetails = n =>{
-  
   n.forEach(newDetails=>{
     const modalTitle = document.getElementById('D');
      modalTitle.innerText = `${newDetails.title}`
