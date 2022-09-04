@@ -34,6 +34,17 @@ const forNewsOfAll = (id) => {
 
 
 const displayNewsDetails=CategoryDetails=>{
+
+  // Total items
+  const itemLength=document.getElementById('items_length')
+  itemLength.value=`${CategoryDetails.length} items found on this category`
+  if(CategoryDetails.length===0){
+    // CategoryDetails.innerHTML="";
+    // return "No data";
+    alert("No data Found");
+  }
+
+
     const newsDe= document.getElementById('news-details');
     newsDe.textContent='';
     CategoryDetails.forEach(newDetails =>{
