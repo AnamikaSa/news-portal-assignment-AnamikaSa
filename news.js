@@ -15,7 +15,8 @@ const displayCatagories=news=>{
         // console.log(newCatagories);
         const li =document.createElement('li');
         li.innerHTML=`
-        <a onclick=forNewsOfAll('${newCatagories.category_id}') href="#" class=" p-2 rounded text-decoration-none list-group-item list-group-item-action list-group-item-primary">${newCatagories.category_name}</a>
+        <a class=" p-2 rounded text-decoration-none list-group-item list-group-item-action list-group-item-primary" herf="#" style=" cursor:pointer;"
+        onclick="forNewsOfAll('${newCatagories.category_id}') , spin(true)">${newCatagories.category_name}</a>
         `;
         newsCata.appendChild(li);
         
@@ -91,6 +92,7 @@ const displayNewsDetails=CategoryDetails=>{
         newsDe.appendChild(div);
 
     });
+    spin(false);
 }
 
 
@@ -103,8 +105,8 @@ const loadDetails = (_id)=>{
         .catch(error => console.log(error))
 }
 
+
 const displayDetails = n =>{
-  
   
   n.forEach(newDetails=>{
     const modalTitle = document.getElementById('D');
@@ -116,6 +118,17 @@ const displayDetails = n =>{
       <p> ${newDetails.details} </p>
   `
 })
+}
+
+// Spinner
+const spin= isLoading =>{
+  const spinnerLoad=document.getElementById('spinner');
+  if(isLoading){
+    spinnerLoad.classList.remove('d-none');
+  }
+  else{
+    spinnerLoad.classList.add('d-none');
+  }
 }
 // forNews();
 loadNews();
