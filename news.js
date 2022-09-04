@@ -7,7 +7,7 @@ const loadNews = () => {
 }
 
 
-
+// for All Categories
 const displayCatagories=news=>{
     const newsCata= document.getElementById('news-catagories');
     
@@ -23,6 +23,7 @@ const displayCatagories=news=>{
     });
 }
 
+// for indivual news
 const forNewsOfAll = (id) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`
   fetch(url)
@@ -38,12 +39,15 @@ const displayNewsDetails=CategoryDetails=>{
     CategoryDetails.forEach(newDetails =>{
         // console.log(newDetails.length);
         // if(newDetails.data.length)
+
+
+        // News added in innerText 
         const div =document.createElement('div');
         div.innerHTML=`
         <div class="row" onclick="loadDetails('${newDetails._id}')">
-            <div class="border rounded mb-5 pt-3 pb-3 d-flex shadow">
+            <div class=" mb-5 pt-3 pb-3 d-flex shadow">
                 <div class="col-md-3 col-5">
-                    <img src="${newDetails.thumbnail_url}" class="img-fluid h-100 rounded">
+                    <img src="${newDetails.thumbnail_url}" class="img-fluid h-100">
                 </div>
                 <div class="col-md-9 col-7 ps-4">
                     <div class="card-body p-0 d-flex flex-column">
@@ -56,6 +60,7 @@ const displayNewsDetails=CategoryDetails=>{
                                 <div>
                                     <img  style="height: 70px;" class ="img-fluid mh-100 rounded-circle" src="${newDetails.author.img}">
                                     <p class="text-capitalize">${newDetails.author.name ? newDetails.author.name : 'Unknown'}</p>
+                                    <p>10th Jan,2022 </p>
                                 </div>    
                             </div>
                             <div class="ps-3 pe-3">
@@ -64,7 +69,7 @@ const displayNewsDetails=CategoryDetails=>{
                             </div>
                             <div>
                             <button class="btn btn-primary p-2" data-bs-toggle="modal"
-                            data-bs-target="#detailOnModal">Show All-> </button>
+                            data-bs-target="#detailOnModal">Show Details-> </button>
                             </div>
                         </div>  
                     </div>
@@ -77,6 +82,8 @@ const displayNewsDetails=CategoryDetails=>{
     });
 }
 
+
+// diplay korar jonno news gulo
 const loadDetails = (_id)=>{
   const url = `https://openapi.programming-hero.com/api/news/${_id}`
     fetch(url)
@@ -100,4 +107,4 @@ const displayDetails = n =>{
 })
 }
 // forNews();
-loadNews()
+loadNews();
